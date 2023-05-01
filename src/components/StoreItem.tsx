@@ -50,11 +50,11 @@ function StoreItem(props: storeItemProps) {
                 className="d-flex align-items-center flex-column"
                 style={{ gap: ".5rem" }}
               >
-                <Button onClick={() => decreaseItemQuantity(id)}>-</Button>
                 <div>
-                  <span>{quantity}</span> in cart
+                  <Button onClick={() => decreaseItemQuantity(id)}>-</Button>{" "}
+                  <span>{quantity}</span> in cart{" "}
+                  <Button onClick={() => increaseItemQuantity(id)}>+</Button>
                 </div>
-                <Button onClick={() => increaseItemQuantity(id)}>+</Button>
               </div>
               <Button
                 variant="danger"
