@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "name": "GPU",
+    "price": 500,
+    "imgUrl": "/images/gpu.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Keyboard",
+    "price": 80,
+    "imgUrl": "/images/keyboard.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Monitor",
+    "price": 150,
+    "imgUrl": "/images/monitor.jpg"
+  },
+  {
+    "id": 4,
+    "name": "Motherboard",
+    "price": 100,
+    "imgUrl": "/images/mother_board.jpg"
+  },
+  {
+    "id": 5,
+    "name": "Mouse",
+    "price": 40,
+    "imgUrl": "/images/mouse.jpg"
+  },
+  {
+    "id": 6,
+    "name": "Processor",
+    "price": 200,
+    "imgUrl": "/images/processor.jpg"
+  }
+]
