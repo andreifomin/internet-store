@@ -1,6 +1,9 @@
 import { Button, Card, CardImg } from "react-bootstrap";
 import formatCurrency from "../utilities/formatCurrency";
 import { useShoppingCart } from "../context/ShoppingCartContext";
+import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faMinus, faPlus, faTrash } from "@fortawesome/free-solid-svg-icons";
 
 type storeItemProps = {
   id: number;
@@ -31,10 +34,10 @@ function StoreItem(props: storeItemProps) {
       />
       <Card.Body className="d-flex flex-column">
         <Card.Title className="d-flex justify-content-center align-items-baseline mb-3">
-          <span>{name}</span>
-          <span>{formatCurrency(price)}</span>
+          {name} {formatCurrency(price)}
         </Card.Title>
-        <div className="mt-auto">
+        {/*<div className="mt-auto">*/}
+        <div>
           {/*Button Add to cart*/}
           {quantity === 0 ? (
             <Button className="w-100" onClick={() => increaseItemQuantity(id)}>
@@ -46,22 +49,25 @@ function StoreItem(props: storeItemProps) {
               className="d-flex align-items-center flex-column"
               style={{ gap: ".5rem" }}
             >
-              <div
-                className="d-flex align-items-center flex-column"
-                style={{ gap: ".5rem" }}
-              >
-                <div>
-                  <Button onClick={() => decreaseItemQuantity(id)}>-</Button>{" "}
-                  <span>{quantity}</span> in cart{" "}
-                  <Button onClick={() => increaseItemQuantity(id)}>+</Button>
-                </div>
+              <div>
+                {/* Button Minus */}
+                <Button size="sm" onClick={() => decreaseItemQuantity(id)}>
+                  <FontAwesomeIcon icon={faMinus} />
+                </Button>{" "}
+                {/* Display Quantity in cart */}
+                <span>{quantity}</span> in cart{" "}
+                {/* Button Plus */}
+                <Button size="sm" onClick={() => increaseItemQuantity(id)}>
+                  <FontAwesomeIcon icon={faPlus} />
+                </Button>{" "}
               </div>
+              {/* Button Delete */}
               <Button
                 variant="danger"
                 size="sm"
                 onClick={() => removeFromCart(id)}
               >
-                Remove
+                <FontAwesomeIcon icon={faTrash} />
               </Button>
             </div>
           )}
